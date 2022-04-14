@@ -8,7 +8,7 @@
 <script>
 // @ is an alias to /src
 import EventCard from '@/components/EventCard.vue'
-import EventService from '@/services/EventService'
+import axios from 'axios'
 export default {
   name: 'Home',
   components: {
@@ -18,15 +18,6 @@ export default {
     return {
       events: null,
     }
-  },
-  created() {
-    EventService.getEvents()
-      .then((response) => {
-        this.events = response.data
-      })
-      .catch((error) => {
-        console.log(error)
-      })
   },
 }
 </script>
